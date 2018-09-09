@@ -42,10 +42,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
   verificar()
   {
     this.ocultarVerificar=false;
-    clearInterval(this.repetidor);
-   
-
-   
+    clearInterval(this.repetidor); 
   }  
 
 }

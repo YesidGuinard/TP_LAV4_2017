@@ -20,6 +20,11 @@ export class MapaDeGoogleComponent implements OnInit {
   ngOnInit() {
   }
 
+  mapClicked($event){
+    console.log($event.coords.lat);
+    console.log($event.coords.lng);
+  }
+
 
   
 
