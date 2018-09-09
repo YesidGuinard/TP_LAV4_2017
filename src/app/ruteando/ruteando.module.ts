@@ -49,7 +49,7 @@ children:
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(MiRuteo)
+    CommonModule,RouterModule.forRoot(MiRuteo,{useHash:true})
   ],
   exports: [
     RouterModule
