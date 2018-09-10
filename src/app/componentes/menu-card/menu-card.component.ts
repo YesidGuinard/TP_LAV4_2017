@@ -6,7 +6,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./menu-card.component.css']
 })
 export class MenuCardComponent implements OnInit {
-
+  images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
   constructor(private route: ActivatedRoute,
     private router: Router) { }
 

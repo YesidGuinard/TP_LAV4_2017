@@ -11,7 +11,7 @@ import { AgilidadAritmeticaComponent } from '../componentes/agilidad-aritmetica/
 import { MenuComponent } from '../componentes/menu/menu.component';
 import { AdivinaMasListadoComponent } from '../componentes/adivina-mas-listado/adivina-mas-listado.component';
 import { AgilidadMasListadoComponent } from '../componentes/agilidad-mas-listado/agilidad-mas-listado.component';
-import { ListadoComponent } from'../componentes/listado/listado.component'
+import { ListadoComponent } from '../componentes/listado/listado.component'
 import { ListadosComponent } from '../componentes/listados/listados.component';
 import { JuegosComponent } from '../componentes/juegos/juegos.component';
 import { RegistroComponent } from '../componentes/registro/registro.component';
@@ -25,31 +25,43 @@ import { JugadoresListadoComponent } from '../componentes/jugadores-listado/juga
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
-{path: 'Jugadores' , component: JugadoresListadoComponent},
-{path: '' , component: PrincipalComponent},
-{path: 'Login' , component: LoginComponent},
-{path: 'Mapa' , component: MapaDeGoogleComponent},
-{path: 'QuienSoy' , component: QuienSoyComponent},
-{path: 'Registro' , component: RegistroComponent},
-{path: 'Principal' , component: PrincipalComponent},
-{path: 'Listado' , component: ListadoComponent},
-{path: 'Paises' , component: ListadoDePaisesComponent},
+  { path: 'Jugadores', component: JugadoresListadoComponent },
+  { path: '', component: PrincipalComponent },
+  { path: 'Login', component: LoginComponent },
+  { path: 'Mapa', component: MapaDeGoogleComponent },
+  { path: 'Registro', component: RegistroComponent },
+  {
+    path: 'Principal',
+    component: PrincipalComponent,
+    children:
+      [
+        { path: '', redirectTo: '/Principal/Juegos', pathMatch: 'full' },
+        {
+          path: 'QuienSoy',
+          component: QuienSoyComponent
+        },
+        {
+          path: 'Juegos',
+          component: MenuCardComponent,
+          children:
+            [{ path: '', component: MenuCardComponent },
+            { path: 'Adivina', component: AdivinaElNumeroComponent },
+            { path: 'AdivinaMasListado', component: AdivinaMasListadoComponent },
+            { path: 'AgilidadaMasListado', component: AgilidadMasListadoComponent },
+            { path: 'Agilidad', component: AgilidadAritmeticaComponent }]
+        },
+      ]
+  },
+  { path: 'Listado', component: ListadoComponent },
+  { path: 'Paises', component: ListadoDePaisesComponent },
 
-{ path: 'Juegos' ,
-component: JuegosComponent ,
-children:
-     [{path: '' , component: MenuCardComponent},
-     {path: 'Adivina' , component: AdivinaElNumeroComponent},
-      {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
-      {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
-      {path: 'Agilidad' , component: AgilidadAritmeticaComponent}]
-},
-{path: '**' , component: ErrorComponent},
-{path: 'error' , component: ErrorComponent}];
+
+  { path: '**', component: ErrorComponent },
+  { path: 'error', component: ErrorComponent }];
 
 @NgModule({
   imports: [
-    CommonModule,RouterModule.forRoot(MiRuteo,{useHash:true})
+    CommonModule, RouterModule.forRoot(MiRuteo, { useHash: true })
   ],
   exports: [
     RouterModule
