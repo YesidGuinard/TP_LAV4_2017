@@ -33,6 +33,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PiedraPapelTijeraCardComponent } from './componentes/piedra-papel-tijera-card/piedra-papel-tijera-card.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdivinaElNumeroCardComponent } from './componentes/adivina-el-numero-card/adivina-el-numero-card.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InputJugadoresComponent,
     SexoPipe,
     PiedraPapelTijeraCardComponent,
-    FooterComponent
+    FooterComponent,
+    AdivinaElNumeroCardComponent
   ],
   imports: [
     NgbModule,

@@ -1,1 +1,3 @@
-<app-piedra-papel-tijera-card></app-piedra-papel-tijera-card>
+<div class="routeContainer" [@routeAnimation]="getDepth(myOutlet)">
+    <router-outlet #myOutlet="outlet"></router-outlet>
+</div>

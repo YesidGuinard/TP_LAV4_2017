@@ -2,9 +2,9 @@
 @import "~bootstrap/scss/_variables.scss";
 @import "~bootstrap/scss/mixins/_breakpoints.scss";
 
-$primary-color: #07689f;
-$secondary-color: #fafafa;
-$terciary-color: #ff7e67;
+$primary-color: #071a52;
+$secondary-color: #a7ff83;
+$terciary-color: #17b978;
 $font-family: "GameTime";
 
 .container-fluid{
@@ -15,11 +15,9 @@ $font-family: "GameTime";
     margin: 0px;
     height: 100vh;
 
-
     .principal{  
         margin: 0px;
-
-
+        
         img{
             padding: 4em;            
             padding-top: 13em;

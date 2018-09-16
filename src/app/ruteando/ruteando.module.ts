@@ -18,6 +18,8 @@ import { CabeceraComponent } from '../componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component'
 import { ListadoDePaisesComponent } from '../componentes/listado-de-paises/listado-de-paises.component'
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
+import { PiedraPapelTijeraCardComponent } from '../componentes/piedra-papel-tijera-card/piedra-papel-tijera-card.component';
+import { AdivinaElNumeroCardComponent } from '../componentes/adivina-el-numero-card/adivina-el-numero-card.component';
 
 
 // declaro donde quiero que se dirija
@@ -38,7 +40,9 @@ const MiRuteo = [
           path: 'Juegos',
           component: JuegosComponent,
           children:
-            [{ path: '', component: JuegosComponent },
+            [{ path: '', redirectTo: 'PPTCard', pathMatch: 'full' },
+            { path: 'PPTCard', data: { depth: 1 }, component: PiedraPapelTijeraCardComponent },
+            { path: 'AENCard', data: { depth: 2 }, component: AdivinaElNumeroCardComponent },
             { path: 'Adivina', component: AdivinaElNumeroComponent },
             { path: 'AdivinaMasListado', component: AdivinaMasListadoComponent },
             { path: 'AgilidadaMasListado', component: AgilidadMasListadoComponent },
