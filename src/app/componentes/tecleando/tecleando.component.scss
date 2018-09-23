@@ -14,7 +14,7 @@ $font-family: "GameTime";
     padding-left: 0px;
     margin: 0px;
     height: 100vh;
-    padding-top: 4em;
+    padding-top: 7em;
 
     h2{
         font-family: $font-family;
@@ -32,6 +32,30 @@ $font-family: "GameTime";
     .principal{  
         margin: 0px;
 
+        .divTecla{
+            border: 2px solid $terciary-color;
+            text-align: center;
+            margin-bottom:15px;
+            .tecla{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size:30vh;
+                text-align: center;
+                color: $terciary-color;
+                margin-bottom: 0.5em;
+                text-shadow: 2px 0 0 $secondary-color, -2px 0 0 $secondary-color, 0 2px 0 $secondary-color, 0 -2px 0 $secondary-color, 1px 1px $secondary-color, -1px -1px 0 $secondary-color, 1px -1px 0 $secondary-color, -1px 1px 0 $secondary-color;
+            }
+
+            
+        }
+
+        .gano{
+            background-color: rgba(0, 255, 13, 0.3);
+        }
+
+        .perdio{
+            background-color: rgba(255, 0, 0, 0.3);
+        }
+        
 
         img{
             margin-top: auto;
@@ -39,14 +63,18 @@ $font-family: "GameTime";
         }
 
         .texto{
-            margin-top:auto;
-            margin-bottom:auto;
-            margin-left: 0.5em;  
+            margin-left: 1.5em; 
 
+            table, th, td{
+                border: 2px solid $terciary-color !important;
+                color: $secondary-color;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                background-color: $primary-color url("../../../assets/patterns/gplay.png");
+            }
             
-        
-            p{
-                font-size: 1.3em;
+            span{
+                font-size: 1em;
                 color: $secondary-color;
                 font-family: Arial, Helvetica, sans-serif;
         
@@ -57,6 +85,10 @@ $font-family: "GameTime";
                 @include media-breakpoint-down(xs) {
                     font-size: 1em;
                 }
+            }       
+        
+            .botones{
+                text-align: center;
             }
 
             .btnJugar {

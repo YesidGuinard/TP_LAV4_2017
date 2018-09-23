@@ -5,52 +5,57 @@
     </div>
   </div>
   <div class="row align-items-center justify-content-center principal">
-    <div class="d-none d-lg-block col-lg-4">
-      <span class="tecla"></span>
+    <div [ngClass]="{'perdio': this.estadoJuego == 2, 'gano' : this.estadoJuego == 1}" class="col-10 col-sm-10 col-md-3 col-lg-5 divTecla">
+      <span class="tecla">{{tecla}}</span>
     </div>
-    <div class="col-10 col-sm-10 col-md-7 col-lg-5 texto">
+    <div class="col-10 col-sm-10 col-md-6 col-lg-6 texto">
       <div class="row">
-        <table>
-          <thead>
-          </thead>
+        <table class="table table-bordered">
           <tbody>
             <tr>
+              <th scope="row">
+                Jugador
+              </th>
               <td>
-                Participante
-              </td>
-              <td>
-
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Tiempo
-              </td>
-              <td>
-
+                {{jugador}}
               </td>
             </tr>
             <tr>
+              <th scope="row">
+                Tiempo Transcurrido
+              </th>
               <td>
+                {{tiempoTranscurrido}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
                 Vidas
-              </td>
+              </th>
               <td>
-
+                {{vidasRestantes}}
               </td>
             </tr>
             <tr>
-              <td>
+              <th scope="row">
                 Puntaje
-              </td>
+              </th>
               <td>
-
+                {{ultimoPuntaje}}
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="row">
-        <button class="btnJugar" routerLink="../Tecleando"><i class="fa fa-play"></i> JUGAR</button>
+      <div class="row botones">
+        <div class="col-5">
+            <button *ngIf="modoDeJuego == 2" class="btnJugar" (click)="Jugar()"><i class="fa fa-play"></i> JUGAR</button>
+            <span *ngIf="modoDeJuego == 1">¡Próxima tecla en <b>{{tiempoRestante}}</b> segundos!</span>
+        </div>
+        <div class="col-7">
+            <button *ngIf="modoDeJuego == 2" class="btnJugar"><i class="fa fa-trophy"></i> RESULTADOS</button>
+            <span *ngIf="modoDeJuego == 1"> <b>JUGANDO </b>- ¡Presiona las teclas que aparecen en pantalla!</span>            
+        </div>
       </div>
     </div>
   </div>

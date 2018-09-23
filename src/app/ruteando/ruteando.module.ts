@@ -15,8 +15,7 @@ import { ListadosComponent } from '../componentes/listados/listados.component';
 import { JuegosComponent } from '../componentes/juegos/juegos.component';
 import { MenuCardComponent } from '../componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from '../componentes/cabecera/cabecera.component';
-import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component'
-import { ListadoDePaisesComponent } from '../componentes/listado-de-paises/listado-de-paises.component'
+import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component';
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
 import { PiedraPapelTijeraCardComponent } from '../componentes/piedra-papel-tijera-card/piedra-papel-tijera-card.component';
 import { AdivinaElNumeroCardComponent } from '../componentes/adivina-el-numero-card/adivina-el-numero-card.component';
@@ -55,9 +54,6 @@ const MiRuteo = [
       ]
   },
   { path: 'Listado', component: ListadoComponent },
-  { path: 'Paises', component: ListadoDePaisesComponent },
-
-
   { path: '**', component: ErrorComponent },
   { path: 'error', component: ErrorComponent }];
 

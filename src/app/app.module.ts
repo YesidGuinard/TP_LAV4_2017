@@ -7,7 +7,6 @@ import { ListadoDeResultadosComponent } from './componentes/listado-de-resultado
 import { LoginComponent } from './componentes/login/login.component';
 import { HttpModule } from '@angular/http';
 import { MiHttpService } from './servicios/mi-http/mi-http.service'; 
-import { PaisesService } from './servicios/paises.service'; 
 import { JugadoresService } from './servicios/jugadores.service'; 
 import { ArchivosJugadoresService} from './servicios/archivos-jugadores.service'; 
 import { ErrorComponent } from './componentes/error/error.component';
@@ -25,7 +24,6 @@ import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
-import { ListadoDePaisesComponent } from './componentes/listado-de-paises/listado-de-paises.component';
 import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
@@ -37,7 +35,7 @@ import { AdivinaElNumeroCardComponent } from './componentes/adivina-el-numero-ca
 import { TecleandoCardComponent } from './componentes/tecleando-card/tecleando-card.component';
 import { TecleandoComponent } from './componentes/tecleando/tecleando.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule } from '@angular/fire'; 
 
 //SERVICIOS
 import { AuthService } from './servicios/auth.service';
@@ -62,7 +60,6 @@ import { SpinnerComponent } from './componentes/spinner/spinner.component';
     CabeceraComponent,
     QuienSoyComponent,
     AnagramaComponent,
-    ListadoDePaisesComponent,
     JugadoresListadoComponent,
     InputJugadoresComponent,
     SexoPipe,
@@ -90,7 +87,6 @@ import { SpinnerComponent } from './componentes/spinner/spinner.component';
     AuthService,
     JuegoServiceService, 
     MiHttpService,
-    PaisesService,
     ArchivosJugadoresService,
     JugadoresService
   ],
