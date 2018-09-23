@@ -5,8 +5,8 @@
     </div>
   </div>
   <div class="row align-items-center justify-content-center principal">
-    <div [ngClass]="{'perdio': this.estadoJuego == 2, 'gano' : this.estadoJuego == 1}" class="col-10 col-sm-10 col-md-3 col-lg-5 divTecla">
-      <span class="tecla">{{tecla}}</span>
+    <div [ngClass]="{'perdio': juego.estadoJuego == 2, 'gano' : juego.estadoJuego == 1}" class="col-10 col-sm-10 col-md-3 col-lg-5 divTecla">
+      <span class="tecla">{{juego.tecla}}</span>
     </div>
     <div class="col-10 col-sm-10 col-md-6 col-lg-6 texto">
       <div class="row">
@@ -17,7 +17,7 @@
                 Jugador
               </th>
               <td>
-                {{jugador}}
+                {{juego.jugador}}
               </td>
             </tr>
             <tr>
@@ -25,7 +25,7 @@
                 Tiempo Transcurrido
               </th>
               <td>
-                {{tiempoTranscurrido}}
+                {{juego.minutosTranscurridos}} : {{juego.segundosTranscurridos}}
               </td>
             </tr>
             <tr>
@@ -33,7 +33,7 @@
                 Vidas
               </th>
               <td>
-                {{vidasRestantes}}
+                {{juego.vidasRestantes}}
               </td>
             </tr>
             <tr>
@@ -41,7 +41,7 @@
                 Puntaje
               </th>
               <td>
-                {{ultimoPuntaje}}
+                {{juego.ultimoPuntaje}}
               </td>
             </tr>
           </tbody>
@@ -49,12 +49,12 @@
       </div>
       <div class="row botones">
         <div class="col-5">
-            <button *ngIf="modoDeJuego == 2" class="btnJugar" (click)="Jugar()"><i class="fa fa-play"></i> JUGAR</button>
-            <span *ngIf="modoDeJuego == 1">¡Próxima tecla en <b>{{tiempoRestante}}</b> segundos!</span>
+            <button *ngIf="juego.modoDeJuego == 2" class="btnJugar" (click)="juego.Jugar()"><i class="fa fa-play"></i> JUGAR</button>
+            <span *ngIf="juego.modoDeJuego == 1">¡Próxima tecla en <b>{{juego.tiempoRestante}}</b> segundos!</span>
         </div>
         <div class="col-7">
-            <button *ngIf="modoDeJuego == 2" class="btnJugar"><i class="fa fa-trophy"></i> RESULTADOS</button>
-            <span *ngIf="modoDeJuego == 1"> <b>JUGANDO </b>- ¡Presiona las teclas que aparecen en pantalla!</span>            
+            <button *ngIf="juego.modoDeJuego == 2" class="btnJugar"><i class="fa fa-trophy"></i> RESULTADOS</button>
+            <span *ngIf="juego.modoDeJuego == 1"> <b>JUGANDO </b>- ¡Presiona las teclas que aparecen en pantalla!</span>            
         </div>
       </div>
     </div>
