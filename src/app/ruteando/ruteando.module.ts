@@ -20,18 +20,20 @@ import { ListadoDePaisesComponent } from '../componentes/listado-de-paises/lista
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
 import { PiedraPapelTijeraCardComponent } from '../componentes/piedra-papel-tijera-card/piedra-papel-tijera-card.component';
 import { AdivinaElNumeroCardComponent } from '../componentes/adivina-el-numero-card/adivina-el-numero-card.component';
+import { TecleandoCardComponent } from '../componentes/tecleando-card/tecleando-card.component';
+import { TecleandoComponent } from '../componentes/tecleando/tecleando.component';
 
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
   { path: 'Jugadores', component: JugadoresListadoComponent },
-  { path: 'Login', component: LoginComponent },
   {
     path: '',
     component: PrincipalComponent,
     children:
       [
         { path: '', redirectTo: 'Juegos', pathMatch: 'full' },
+        { path: 'Login', component: LoginComponent },
         {
           path: 'QuienSoy',
           component: QuienSoyComponent
@@ -40,9 +42,11 @@ const MiRuteo = [
           path: 'Juegos',
           component: JuegosComponent,
           children:
-            [{ path: '', redirectTo: 'PPTCard', pathMatch: 'full' },
-            { path: 'PPTCard', data: { depth: 1 }, component: PiedraPapelTijeraCardComponent },
-            { path: 'AENCard', data: { depth: 2 }, component: AdivinaElNumeroCardComponent },
+            [{ path: '', redirectTo: 'TCard', pathMatch: 'full' },
+            { path: 'TCard', data: { depth: 1 }, component: TecleandoCardComponent },
+            { path: 'PPTCard', data: { depth: 2 }, component: PiedraPapelTijeraCardComponent },
+            { path: 'AENCard', data: { depth: 3 }, component: AdivinaElNumeroCardComponent },
+            { path: 'Tecleando', component: TecleandoComponent },
             { path: 'Adivina', component: AdivinaElNumeroComponent },
             { path: 'AdivinaMasListado', component: AdivinaMasListadoComponent },
             { path: 'AgilidadaMasListado', component: AgilidadMasListadoComponent },

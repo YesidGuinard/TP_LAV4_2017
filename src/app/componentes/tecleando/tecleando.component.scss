@@ -1,0 +1,87 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+$primary-color: #48466d;
+$secondary-color: #abedd8;
+$terciary-color: #46cdcf;
+$font-family: "GameTime";
+
+.container-fluid{
+    background: $primary-color url("../../../assets/patterns/gplay.png");
+    background-repeat: repeat;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin: 0px;
+    height: 100vh;
+    padding-top: 4em;
+
+    h2{
+        font-family: $font-family;
+        font-size:3em;
+        text-align: center;
+        color: $terciary-color;
+        margin-bottom: 0.5em;
+        text-shadow: 2px 0 0 $secondary-color, -2px 0 0 $secondary-color, 0 2px 0 $secondary-color, 0 -2px 0 $secondary-color, 1px 1px $secondary-color, -1px -1px 0 $secondary-color, 1px -1px 0 $secondary-color, -1px 1px 0 $secondary-color;
+        @include media-breakpoint-down(xs) {
+            font-size: 1.5em;
+        }
+    }
+
+
+    .principal{  
+        margin: 0px;
+
+
+        img{
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .texto{
+            margin-top:auto;
+            margin-bottom:auto;
+            margin-left: 0.5em;  
+
+            
+        
+            p{
+                font-size: 1.3em;
+                color: $secondary-color;
+                font-family: Arial, Helvetica, sans-serif;
+        
+                b{
+                    color: $terciary-color;
+                }
+
+                @include media-breakpoint-down(xs) {
+                    font-size: 1em;
+                }
+            }
+
+            .btnJugar {
+                color: $secondary-color;
+                background: none;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                border-radius: 0;
+                padding: 1.2em 2em;
+                letter-spacing: 0.35em;
+                font-size: 1em;
+                transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+                margin-top:1em;
+                border: $terciary-color solid 2px;
+                    
+                &:hover {
+                    border: $secondary-color solid 2px;
+                    background-color: $terciary-color;
+                    cursor: pointer;
+                }
+        
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+}

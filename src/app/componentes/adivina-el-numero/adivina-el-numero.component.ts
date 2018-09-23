@@ -28,8 +28,8 @@ export class AdivinaElNumeroComponent implements OnInit {
   {
     this.contador++;
     this.ocultarVerificar=true;
-    console.info("numero Secreto:",this.nuevoJuego.gano);  
-    if (this.nuevoJuego.verificar()){
+    console.info("numero Secreto:");  
+    if (this.ocultarVerificar){
       
       this.enviarJuego.emit(this.nuevoJuego);
       this.MostarMensaje("Sos un Genio!!!",true);
@@ -66,7 +66,7 @@ export class AdivinaElNumeroComponent implements OnInit {
      
 
     }
-    console.info("numero Secreto:",this.nuevoJuego.gano);  
+    console.info("numero Secreto:");  
   }  
 
   MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {

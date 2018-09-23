@@ -1,93 +1,89 @@
 <section class="login-block">
-<div class="container">
-  <div class="row">
-    <div class="col-md-4 login-sec">
+  <app-spinner *ngIf="esperandoRespuesta"></app-spinner>
+  <div class="container-fluid" id="contenedor">
+    <div class="row">
+      <div class="col-10 col-md-12 login-sec">        
         <h2 class="text-center">Sala de Juegos</h2>
-      <ngb-tabset>        
-        <ngb-tab title="Ingresar">
+        <ngb-tabset (tabChange)="Limpiar()">
+          <ngb-tab title="Ingresar" (click)="Limpiar()">
             <ng-template ngbTabContent>
-          
-          <form class="login-form">
-            <div class="form-group">
-              <label for="exampleInputEmail1" class="text-uppercase">Usuario</label>
-              <input type="text" class="form-control" placeholder="">
 
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1" class="text-uppercase">Contraseña</label>
-              <input type="password" class="form-control" placeholder="">
-            </div>
-
-
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="checkbox" class="form-check-input">
-                <small>Recordar</small>
-              </label>
-              <button type="submit" class="btn btn-login float-right">Enviar</button>
-            </div>
-
-          </form>
-          <div class="copy-text">Creado por Mauricio Cerizza para <a href="http://www.sistemas-utnfra.com.ar">UTN-FRA</a></div>
-
-        </ng-template>
-        </ngb-tab>
-        <ngb-tab title="Registrarse">
+              <div>
+                  <div class="form-group">
+                      <label for="email" class="text-uppercase">Email</label>
+                      <input id="email" type="email" class="form-control" [ngClass]="{'error': !email.valid && !email.pristine}"
+                        placeholder="mail@mail.com" [(ngModel)]="correo" name="email" required #email="ngModel" maxlength="50">
+                    </div>
+                    <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                      Debe ingresar un email.
+                    </div>
+    
+                    <div class="form-group">
+                      <label for="password" class="text-uppercase">Contraseña</label>
+                      <input id="password" type="password" class="form-control" [ngClass]="{'error': !password.valid && !password.pristine}"
+                        placeholder="Contraseña" [(ngModel)]="pass" name="password" required #password="ngModel" maxlength="15">
+                    </div>
+                    <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+                        Debe ingresar una contraseña.
+                    </div>
+    
+                    <div class="form-check">
+                      <div *ngIf="error" class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> {{mensajeError}}</div>
+                      <div *ngIf="cuentaCreada" class="alert alert-success"><i class="fa fa-check-circle"></i> Cuenta creada correctamente.</div>
+                      <button [disabled]="password.invalid || email.invalid" type="submit" (click)="Login()" class="btn btn-login float-right">Enviar</button>
+                    </div>
+                  </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Registrarse">
             <ng-template ngbTabContent>
-          
-          <form class="login-form">
-            <div class="form-group">
-              <label for="exampleInputEmail1" class="text-uppercase">Usuario</label>
-              <input type="text" class="form-control" placeholder="">
 
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1" class="text-uppercase">Contraseña</label>
-              <input type="password" class="form-control" placeholder="">
-            </div>
+              <div >
+                <div class="form-group">
+                  <label for="name" class="text-uppercase">Nombre</label>
+                  <input id="name" type="text" class="form-control" [ngClass]="{'error': !name.valid && !name.pristine}"
+                    placeholder="Nombre Apellido" [(ngModel)]="nombre" name="name" required #name="ngModel" maxlength="50">
+                </div>
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                  El nombre es requerido.
+                </div>
 
+                <div class="form-group">
+                  <label for="email" class="text-uppercase">Email</label>
+                  <input id="email" type="email" class="form-control" [ngClass]="{'error': !email.valid && !email.pristine}"
+                    placeholder="mail@mail.com" [(ngModel)]="correo" name="email" required #email="ngModel" maxlength="50"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                </div>
+                <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                  Debe ingresar un email válido.
+                </div>
 
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="checkbox" class="form-check-input">
-                <small>Recordar</small>
-              </label>
-              <button type="submit" class="btn btn-login float-right">Enviar</button>
-            </div>
+                <div class="form-group">
+                  <label for="password" class="text-uppercase">Contraseña</label>
+                  <input id="password" type="password" class="form-control" [ngClass]="{'error': !password.valid && !password.pristine}"
+                    placeholder="Contraseña" [(ngModel)]="pass" name="password" required #password="ngModel" minlength="6"
+                    maxlength="15">
+                </div>
+                <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+                  <div *ngIf="!password.valid && password.errors.minlength">
+                    La contraseña debe ser de más de {{password.errors.minlength.requiredLength}} caracteres.
+                  </div>
+                  <div *ngIf="!password.valid && password.errors.required">
+                    Debe ingresar una contraseña.
+                  </div>
+                </div>
 
-          </form>
-          <div class="copy-text">Creado por Mauricio Cerizza para <a href="http://www.sistemas-utnfra.com.ar">UTN-FRA</a></div>
+                <div class="form-check">
+                  <div *ngIf="error" class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> {{mensajeError}}</div>
+                  <div *ngIf="cuentaCreada" class="alert alert-success"><i class="fa fa-check-circle"></i> Cuenta creada correctamente.</div>
+                  <button [disabled]="password.invalid || email.invalid || name.invalid" type="submit" (click)="OnSubmitAddUser()" class="btn btn-login float-right">Enviar</button>
+                </div>
 
-        </ng-template>
-        </ngb-tab>
-      </ngb-tabset>
-    </div>
-    <div class="col-md-8 banner-sec">
-      <ngb-carousel *ngIf="images">
-        <ng-template ngbSlide>
-          <img [src]="images[0]" alt="Random first slide">
-          <div class="carousel-caption">
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <img [src]="images[1]" alt="Random second slide">
-          <div class="carousel-caption">
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <img [src]="images[2]" alt="Random third slide">
-          <div class="carousel-caption">
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
-        </ng-template>
-      </ngb-carousel>
-
+              </div>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
     </div>
   </div>
-</div>
 </section>

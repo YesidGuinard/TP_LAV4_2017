@@ -1,82 +1,88 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { AuthService } from '../../servicios/auth.service';
+import { Location } from '@angular/common';
 
-import {Subscription} from "rxjs";
-import {TimerObservable} from "rxjs/observable/TimerObservable";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
-
-  private subscription: Subscription;
-  usuario = '';
-  clave= '';
-  progreso: number;
-  progresoMensaje="esperando..."; 
-  logeando=true;
-  ProgresoDeAncho:string;
-  images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
-
-  clase="progress-bar progress-bar-info progress-bar-striped ";
+  public esperandoRespuesta: boolean;
+  public correo: string;
+  public pass: string;
+  public nombre: string;
+  public mensajeError: string;
+  public error: boolean;
+  public cuentaCreada: boolean;
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router) {
-      this.progreso=0;
-      this.ProgresoDeAncho="0%";
-
+    public authService: AuthService, private location: Location) {
+    this.esperandoRespuesta = false;
+    this.cuentaCreada = false;
+    this.error = false;
   }
 
   ngOnInit() {
+    this.authService.getAuth().subscribe( auth => {
+      if(auth){
+        this.location.back();
+      }
+    })
   }
 
-  Entrar() {
-    if (this.usuario === 'admin' && this.clave === 'admin') {
-      this.router.navigate(['/Principal']);
-    }
+  Limpiar(){
+    this.cuentaCreada = false;
+    this.error = false;
+    this.correo = "";
+    this.pass = "";
+    this.nombre = "";
   }
-  MoverBarraDeProgreso() {
-    
-    this.logeando=false;
-    this.clase="progress-bar progress-bar-danger progress-bar-striped active";
-    this.progresoMensaje="NSA spy..."; 
-    let timer = TimerObservable.create(200, 50);
-    this.subscription = timer.subscribe(t => {
-      console.log("inicio");
-      this.progreso=this.progreso+1;
-      this.ProgresoDeAncho=this.progreso+20+"%";
-      switch (this.progreso) {
-        case 15:
-        this.clase="progress-bar progress-bar-warning progress-bar-striped active";
-        this.progresoMensaje="Verificando ADN..."; 
-          break;
-        case 30:
-          this.clase="progress-bar progress-bar-Info progress-bar-striped active";
-          this.progresoMensaje="Adjustando encriptación.."; 
-          break;
-          case 60:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Recompilando Info del dispositivo..";
-          break;
-          case 75:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Recompilando claves facebook, gmail, chats..";
-          break;
-          case 85:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Instalando KeyLogger..";
-          break;
-          
-        case 100:
-          console.log("final");
-          this.subscription.unsubscribe();
-          this.Entrar();
-          break;
-      }     
+
+  OnSubmitAddUser() {
+    this.error = false;
+    this.cuentaCreada = false;
+    this.esperandoRespuesta = true;
+    this.authService.registeruser(this.correo, this.pass)
+      .then((res) => {
+        this.cuentaCreada = true;
+        this.authService.updateProfile(this.nombre,null)
+        .then( (res) => {
+          console.log("Nombre guardado");
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log("Error al guardar el nombre");
+          console.log(err);
+        })
+
+        console.log(res);
+      })
+      .catch((err) => {
+        this.error = true;
+        this.mensajeError = err.message;
+        console.log(err);
+      })
+      .then(() => {
+        this.esperandoRespuesta = false;
+      });
+  }
+
+  Login(){    
+    this.error = false;
+    this.esperandoRespuesta = true;
+    this.authService.login(this.correo,this.pass)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      this.error = true;
+      this.mensajeError = err.message;
+      console.log(err);
+    })
+    .then(() => {
+      this.esperandoRespuesta = false;
     });
-    //this.logeando=true;
   }
-
 }

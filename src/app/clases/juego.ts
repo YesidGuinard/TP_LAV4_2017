@@ -1,27 +1,26 @@
+import { Jugador } from './jugador';
+
+export enum ModoDeJuego
+{
+    Jugando = 1,
+    NoJugando = 2        
+}
+
 export abstract class Juego {
-  public nombre = 'Sin Nombre';
-  public jugador: string;
-  public gano = false;
+  public jugador: Jugador;
+  public ultimoPuntaje: number;
+  public vidasRestantes: number;
+  public modoDeJuego: ModoDeJuego;
 
-  constructor(nombre?: string, gano?: boolean,jugador?:string) {
-    if (nombre)
-      this.nombre = nombre;
+  constructor(vidasRestantes: number) {
+    this.modoDeJuego = ModoDeJuego.NoJugando;
+    this.ultimoPuntaje = 0;
+    this.vidasRestantes = vidasRestantes;
+    this.jugador = new Jugador();
+  } 
 
-    if (gano)
-      this.gano = gano;
-    if(jugador)
-      this.jugador=jugador;
-    else
-      this.jugador= "natalia natalia";
-  }
-
-
-  
-
-  public abstract verificar():boolean; 
-  
-  public retornarAyuda() {
-    
+  public retornarAyuda() {    
     return "NO hay Ayuda definida";
   }
 }
+

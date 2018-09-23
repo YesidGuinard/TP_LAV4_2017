@@ -34,6 +34,15 @@ import { PiedraPapelTijeraCardComponent } from './componentes/piedra-papel-tijer
 import { FooterComponent } from './componentes/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdivinaElNumeroCardComponent } from './componentes/adivina-el-numero-card/adivina-el-numero-card.component';
+import { TecleandoCardComponent } from './componentes/tecleando-card/tecleando-card.component';
+import { TecleandoComponent } from './componentes/tecleando/tecleando.component';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+
+//SERVICIOS
+import { AuthService } from './servicios/auth.service';
+import { environment } from '../environments/environment.prod';
+import { SpinnerComponent } from './componentes/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +68,10 @@ import { AdivinaElNumeroCardComponent } from './componentes/adivina-el-numero-ca
     SexoPipe,
     PiedraPapelTijeraCardComponent,
     FooterComponent,
-    AdivinaElNumeroCardComponent
+    AdivinaElNumeroCardComponent,
+    TecleandoCardComponent,
+    TecleandoComponent,
+    SpinnerComponent
   ],
   imports: [
     NgbModule,
@@ -70,9 +82,18 @@ import { AdivinaElNumeroCardComponent } from './componentes/adivina-el-numero-ca
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
+  providers: [ 
+    AuthService,
+    JuegoServiceService, 
+    MiHttpService,
+    PaisesService,
+    ArchivosJugadoresService,
+    JugadoresService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
