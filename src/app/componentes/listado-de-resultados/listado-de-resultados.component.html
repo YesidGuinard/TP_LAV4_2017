@@ -1,18 +1,24 @@
-<table class="table table-condensed table-hover">
-  <thead>
-    <tr>
-      <th>Juego</th>
-      <th>Jugador</th>
-      <th>Puntaje</th>
-      <th>Fecha</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let resultado of resultados">
-      <td>{{resultado.juego}} </td>
-      <td>{{resultado.nombre}} </td>
-      <td>{{resultado.puntaje}} </td>
-      <td>{{resultado.fecha.toLocaleDateString('es-AR')}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-condensed table-hover table-dark">
+        <thead>
+          <tr>
+            <th>Juego</th>
+            <th>Jugador</th>
+            <th>Puntaje</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let resultado of resultados">
+            <td>{{resultado.juego}} </td>
+            <td>{{resultado.nombre}} </td>
+            <td>{{resultado.puntaje}} </td>
+            <td>{{resultado.fecha.toLocaleDateString('es-AR')}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

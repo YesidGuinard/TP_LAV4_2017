@@ -1,4 +1,4 @@
-/*!
+app-root,body,html{margin:0;min-height:100vh;max-height:100vh;min-width:100vw;max-width:100vw;padding:0;overflow:scroll}::-webkit-scrollbar{height:0;width:0;background:0 0}@font-face{font-family:GameTime;src:url(Boardgamers.e94a691d675fb19a2359.ttf) format("opentype")}@font-face{font-family:GameOver;src:url(Game_Over_Dude.00193328dc8e6b156222.ttf) format("opentype")}/*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
