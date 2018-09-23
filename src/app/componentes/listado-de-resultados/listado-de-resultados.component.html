@@ -1,19 +1,18 @@
-<h3>saludo</h3>
-<table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>Juego</th>
-        <th>Jugador</th>
-        <th>Resultado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let juego of listado">
-        <td>{{juego.nombre}} </td>
-        <td>{{juego.jugador}} </td> 
-        <td *ngIf="juego.gano">Gano </td>   
-        <td *ngIf="!juego.gano">Perdio</td>     
-      </tr>
-     
-    </tbody>
-  </table>
+<table class="table table-condensed table-hover">
+  <thead>
+    <tr>
+      <th>Juego</th>
+      <th>Jugador</th>
+      <th>Puntaje</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let resultado of resultados">
+      <td>{{resultado.juego}} </td>
+      <td>{{resultado.nombre}} </td>
+      <td>{{resultado.puntaje}} </td>
+      <td>{{resultado.fecha.toLocaleDateString('es-AR')}}</td>
+    </tr>
+  </tbody>
+</table>

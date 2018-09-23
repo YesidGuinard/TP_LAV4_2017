@@ -4,6 +4,7 @@ import { HostListener } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AuthService } from '../../servicios/auth.service';
 import { Tecleando } from  '../../clases/tecleando';
+import { DatabaseService} from '../../servicios/database.service';
 
 @Component({
   selector: 'app-tecleando',
@@ -14,9 +15,9 @@ import { Tecleando } from  '../../clases/tecleando';
 export class TecleandoComponent implements OnInit {
   public juego : Tecleando;
 
-  constructor(public authService: AuthService,private router: Router)
+  constructor(public authService: AuthService,private router: Router, public databaseService : DatabaseService)
   { 
-    this.juego = new Tecleando();
+    this.juego = new Tecleando(databaseService);
   }
 
   ngOnInit() {
@@ -36,7 +37,7 @@ export class TecleandoComponent implements OnInit {
   }
 
   public IrAResultados(){
-    
+
   }
  
   

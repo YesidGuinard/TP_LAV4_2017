@@ -1,9 +1,8 @@
-import { Juego } from '../clases/juego'
+import { Juego, Juegos } from '../clases/juego'
 
-export class JuegoAgilidad extends Juego{
+export class JuegoAgilidad {
     numeroIngresado = 0;
  
     constructor(){
-      super(3);
     }
 }

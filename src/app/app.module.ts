@@ -12,18 +12,13 @@ import { ArchivosJugadoresService} from './servicios/archivos-jugadores.service'
 import { ErrorComponent } from './componentes/error/error.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/agilidad-aritmetica.component';
-import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/adivina-mas-listado.component';
-import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { RuteandoModule } from './ruteando/ruteando.module';
 import { JugadoresListadoComponent } from './componentes/jugadores-listado/jugadores-listado.component';
-import { ListadosComponent } from './componentes/listados/listados.component';
 import { JuegosComponent } from './componentes/juegos/juegos.component';
-import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 import { AgmCoreModule } from '@agm/core';
-import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PiedraPapelTijeraCardComponent } from './componentes/piedra-papel-tijera-card/piedra-papel-tijera-card.component';
@@ -33,13 +28,16 @@ import { AdivinaElNumeroCardComponent } from './componentes/adivina-el-numero-ca
 import { TecleandoCardComponent } from './componentes/tecleando-card/tecleando-card.component';
 import { TecleandoComponent } from './componentes/tecleando/tecleando.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire'; 
+import { TableroJuegosComponent } from './componentes/tablero-juegos/tablero-juegos.component';
+import { SpinnerComponent } from './componentes/spinner/spinner.component';
 
 //SERVICIOS
 import { AuthService } from './servicios/auth.service';
+import { DatabaseService } from './servicios/database.service';
 import { environment } from '../environments/environment.prod';
-import { SpinnerComponent } from './componentes/spinner/spinner.component';
-import { TableroJuegosComponent } from './componentes/tablero-juegos/tablero-juegos.component';
+
 
 @NgModule({
   declarations: [
@@ -50,16 +48,11 @@ import { TableroJuegosComponent } from './componentes/tablero-juegos/tablero-jue
     PrincipalComponent,
     LoginComponent,
     AgilidadAritmeticaComponent,
-    AdivinaMasListadoComponent,
-    AgilidadMasListadoComponent,
-    ListadosComponent,
     JuegosComponent,
-    MenuCardComponent,
     CabeceraComponent,
     QuienSoyComponent,
     AnagramaComponent,
     JugadoresListadoComponent,
-    InputJugadoresComponent,
     SexoPipe,
     PiedraPapelTijeraCardComponent,
     FooterComponent,
@@ -80,13 +73,15 @@ import { TableroJuegosComponent } from './componentes/tablero-juegos/tablero-jue
     }),
     BrowserAnimationsModule,
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [ 
     AuthService,
     MiHttpService,
     ArchivosJugadoresService,
-    JugadoresService
+    JugadoresService,
+    DatabaseService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,7 @@
 
 import { Component, OnInit , Input, EventEmitter} from '@angular/core';
+import { DatabaseService } from '../../servicios/database.service';
+import { Data } from '@agm/core/services/google-maps-types';
 
 @Component({
   selector: 'app-listado-de-resultados',
@@ -7,21 +9,14 @@ import { Component, OnInit , Input, EventEmitter} from '@angular/core';
   styleUrls: ['./listado-de-resultados.component.css']
 })
 export class ListadoDeResultadosComponent implements OnInit {
- @Input()
- listado: Array<any>;
- @Input()
- saludo: string;
+  public resultados : Object;
 
-
-  constructor() {
-   }
+  constructor(private databaseService : DatabaseService) {
+    this.resultados = databaseService.ListarResultados();
+    console.log(this.resultados);  
+  }
 
   ngOnInit() {
 
   }
-
-  ver() {
-    console.info(this.listado);
-  }
-
 }

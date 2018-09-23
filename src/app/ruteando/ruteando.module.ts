@@ -8,11 +8,7 @@ import { LoginComponent } from '../componentes/login/login.component';
 import { ErrorComponent } from '../componentes/error/error.component';
 import { PrincipalComponent } from '../componentes/principal/principal.component';
 import { AgilidadAritmeticaComponent } from '../componentes/agilidad-aritmetica/agilidad-aritmetica.component';
-import { AdivinaMasListadoComponent } from '../componentes/adivina-mas-listado/adivina-mas-listado.component';
-import { AgilidadMasListadoComponent } from '../componentes/agilidad-mas-listado/agilidad-mas-listado.component';
-import { ListadosComponent } from '../componentes/listados/listados.component';
 import { JuegosComponent } from '../componentes/juegos/juegos.component';
-import { MenuCardComponent } from '../componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from '../componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component';
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
@@ -33,6 +29,10 @@ const MiRuteo = [
         { path: '', redirectTo: 'Juegos', pathMatch: 'full' },
         { path: 'Login', component: LoginComponent },
         {
+          path: 'Resultados',
+          component: ListadoDeResultadosComponent
+        },
+        {
           path: 'QuienSoy',
           component: QuienSoyComponent
         },
@@ -46,8 +46,6 @@ const MiRuteo = [
             { path: 'AENCard', data: { depth: 3 }, component: AdivinaElNumeroCardComponent },
             { path: 'Tecleando', component: TecleandoComponent },
             { path: 'Adivina', component: AdivinaElNumeroComponent },
-            { path: 'AdivinaMasListado', component: AdivinaMasListadoComponent },
-            { path: 'AgilidadaMasListado', component: AgilidadMasListadoComponent },
             { path: 'Agilidad', component: AgilidadAritmeticaComponent }]
         },
       ]

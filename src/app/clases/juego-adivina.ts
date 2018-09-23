@@ -1,10 +1,9 @@
-import { Juego } from '../clases/juego'
+import { Juego, Juegos } from '../clases/juego'
 
-export class JuegoAdivina extends Juego {
+export class JuegoAdivina{
     numeroSecreto: number = 0;
     numeroIngresado = 0;
     constructor(nombre?: string, gano?: boolean, jugador?:string) {
-        super(3); 
       }
      public generarnumero() {
         this.numeroSecreto = Math.floor((Math.random() * 100) + 1);

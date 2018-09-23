@@ -1,3 +1,6 @@
+import { DatabaseService } from "../servicios/database.service";
+import { Data } from "@angular/router";
+
 export enum ModoDeJuego
 {
     Jugando = 1,
@@ -11,6 +14,13 @@ export enum EstadoJuego
     Nada = 3      
 }
 
+export enum Juegos{
+  Tecleando = "Tecleando",
+  AdivinaElNumero = "Adivina el Número",
+  AgilidadAritmetica = "Agilidad Aritmética"
+
+}
+
 export abstract class Juego {
   public jugador: string;
   public ultimoPuntaje: number;
@@ -20,15 +30,18 @@ export abstract class Juego {
   public minutosTranscurridos: number;
   public estadoJuego : EstadoJuego;
   private intervaloTiempo : NodeJS.Timer;
+  public juego : Juegos;
+  private databaseService : DatabaseService; 
 
-  constructor(vidasRestantes: number) {
+  constructor(vidasRestantes: number, juego: Juegos, databaseService : DatabaseService) {
     this.modoDeJuego = ModoDeJuego.NoJugando;
     this.ultimoPuntaje = 0;
     this.vidasRestantes = vidasRestantes;
-    this.jugador = "Juan";
     this.minutosTranscurridos = 0;
     this.segundosTranscurridos = 0;
     this.estadoJuego = EstadoJuego.Nada;
+    this.juego = juego;
+    this.databaseService = databaseService;
   } 
 
   public ComenzarCronometro(){
@@ -47,7 +60,7 @@ export abstract class Juego {
   }
 
   public GuardarResultado(){
-
+    this.databaseService.GuardarResultados(this.jugador,this.ultimoPuntaje,this.minutosTranscurridos,this.segundosTranscurridos,this.juego);
   }
 }
 
