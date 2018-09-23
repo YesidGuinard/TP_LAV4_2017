@@ -34,6 +34,10 @@ export class TecleandoComponent implements OnInit {
   handleKeyboardEvent(event: KeyboardEvent) { 
     this.juego.PresionoTecla(event.key);    
   }
+
+  public IrAResultados(){
+    
+  }
  
   
 

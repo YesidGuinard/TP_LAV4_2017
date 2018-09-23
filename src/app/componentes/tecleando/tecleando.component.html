@@ -9,54 +9,9 @@
       <span class="tecla">{{juego.tecla}}</span>
     </div>
     <div class="col-10 col-sm-10 col-md-6 col-lg-6 texto">
-      <div class="row">
-        <table class="table table-bordered">
-          <tbody>
-            <tr>
-              <th scope="row">
-                Jugador
-              </th>
-              <td>
-                {{juego.jugador}}
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">
-                Tiempo Transcurrido
-              </th>
-              <td>
-                {{juego.minutosTranscurridos}} : {{juego.segundosTranscurridos}}
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">
-                Vidas
-              </th>
-              <td>
-                {{juego.vidasRestantes}}
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">
-                Puntaje
-              </th>
-              <td>
-                {{juego.ultimoPuntaje}}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="row botones">
-        <div class="col-5">
-            <button *ngIf="juego.modoDeJuego == 2" class="btnJugar" (click)="juego.Jugar()"><i class="fa fa-play"></i> JUGAR</button>
-            <span *ngIf="juego.modoDeJuego == 1">¡Próxima tecla en <b>{{juego.tiempoRestante}}</b> segundos!</span>
-        </div>
-        <div class="col-7">
-            <button *ngIf="juego.modoDeJuego == 2" class="btnJugar"><i class="fa fa-trophy"></i> RESULTADOS</button>
-            <span *ngIf="juego.modoDeJuego == 1"> <b>JUGANDO </b>- ¡Presiona las teclas que aparecen en pantalla!</span>            
-        </div>
-      </div>
+      <app-tablero-juegos class="tecleando" ultimoPuntaje={{juego.ultimoPuntaje}} tiempoRestante={{juego.tiempoRestante}} 
+      vidasRestantes={{juego.vidasRestantes}} minutosTranscurridos={{juego.minutosTranscurridos}} segundosTranscurridos={{juego.segundosTranscurridos}}
+      jugador={{juego.jugador}}  modoDeJuego={{juego.modoDeJuego}} (jugarClicked)="juego.Jugar()" (resultadosClicked)="IrAResultados()"></app-tablero-juegos>
     </div>
   </div>
 </div>

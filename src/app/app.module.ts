@@ -39,6 +39,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AuthService } from './servicios/auth.service';
 import { environment } from '../environments/environment.prod';
 import { SpinnerComponent } from './componentes/spinner/spinner.component';
+import { TableroJuegosComponent } from './componentes/tablero-juegos/tablero-juegos.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { SpinnerComponent } from './componentes/spinner/spinner.component';
     AdivinaElNumeroCardComponent,
     TecleandoCardComponent,
     TecleandoComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    TableroJuegosComponent
   ],
   imports: [
     NgbModule,

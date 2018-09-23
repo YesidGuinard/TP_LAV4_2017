@@ -65,55 +65,108 @@ $font-family: "GameTime";
         .texto{
             margin-left: 1.5em; 
 
-            table, th, td{
-                border: 2px solid $terciary-color !important;
-                color: $secondary-color;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-                background-color: $primary-color url("../../../assets/patterns/gplay.png");
-            }
             
-            span{
-                font-size: 1em;
-                color: $secondary-color;
-                font-family: Arial, Helvetica, sans-serif;
-        
-                b{
-                    color: $terciary-color;
-                }
+            
+        }
 
-                @include media-breakpoint-down(xs) {
-                    font-size: 1em;
-                }
-            }       
-        
-            .botones{
-                text-align: center;
-            }
-
-            .btnJugar {
-                color: $secondary-color;
-                background: none;
-                font-family: Arial, Helvetica, sans-serif;
-                font-weight: bold;
-                border-radius: 0;
-                padding: 1.2em 2em;
-                letter-spacing: 0.35em;
-                font-size: 1em;
-                transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
-                margin-top:1em;
-                border: $terciary-color solid 2px;
-                    
-                &:hover {
-                    border: $secondary-color solid 2px;
-                    background-color: $terciary-color;
-                    cursor: pointer;
-                }
-        
-                &:focus{
-                    outline: none;
-                }
-            }
+        table, th, td{
+        border: 2px solid $terciary-color !important;
+        color: $secondary-color;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        background-color: $primary-color url("../../../assets/patterns/gplay.png");
+    }
+    
+    span{
+        font-size: 1em;
+        color: $secondary-color;
+        font-family: Arial, Helvetica, sans-serif;
+    
+        b{
+            color: $terciary-color;
+        }
+    
+        @include media-breakpoint-down(xs) {
+            font-size: 1em;
+        }
+    }       
+    
+    .botones{
+        text-align: center;
+    }
+    
+    .btnJugar {
+        color: $secondary-color;
+        background: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        border-radius: 0;
+        padding: 1.2em 2em;
+        letter-spacing: 0.35em;
+        font-size: 1em;
+        transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+        margin-top:1em;
+        border: $terciary-color solid 2px;
+            
+        &:hover {
+            border: $secondary-color solid 2px;
+            background-color: $terciary-color;
+            cursor: pointer;
+        }
+    
+        &:focus{
+            outline: none;
         }
     }
+    }
 }
+
+table, th, td{
+        border: 2px solid $terciary-color !important;
+        color: $secondary-color;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        background-color: $primary-color url("../../../assets/patterns/gplay.png");
+    }
+    
+    span{
+        font-size: 1em;
+        color: $secondary-color;
+        font-family: Arial, Helvetica, sans-serif;
+    
+        b{
+            color: $terciary-color;
+        }
+    
+        @include media-breakpoint-down(xs) {
+            font-size: 1em;
+        }
+    }       
+    
+    .botones{
+        text-align: center;
+    }
+    
+    .btnJugar {
+        color: $secondary-color;
+        background: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        border-radius: 0;
+        padding: 1.2em 2em;
+        letter-spacing: 0.35em;
+        font-size: 1em;
+        transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+        margin-top:1em;
+        border: $terciary-color solid 2px;
+            
+        &:hover {
+            border: $secondary-color solid 2px;
+            background-color: $terciary-color;
+            cursor: pointer;
+        }
+    
+        &:focus{
+            outline: none;
+        }
+    }
