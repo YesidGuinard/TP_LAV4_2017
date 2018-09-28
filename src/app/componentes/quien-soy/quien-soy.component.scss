@@ -1,0 +1,47 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+$primary-color: #071a52;
+$secondary-color: #a7ff83;
+$terciary-color: #17b978;
+$font-family: "GameTime";
+
+.container-fluid{
+    padding-top: 5em;
+    background: $primary-color url("../../../assets/patterns/gplay.png");
+    background-repeat: repeat;   
+    margin: 0px;
+    height: 100vh;
+     align-items: center;
+    
+     .row{
+        img{
+            border: 5px solid $terciary-color;
+        }
+    
+        .texto{
+            border: 5px solid $terciary-color;
+            color: $secondary-color;
+        }
+    
+        h1{
+            font-family: Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size:3em;
+            color: $terciary-color;
+            margin-bottom: 0.5em;
+            //text-shadow: 2px 0 0 $secondary-color, -2px 0 0 $secondary-color, 0 2px 0 $secondary-color, 0 -2px 0 $secondary-color, 1px 1px $secondary-color, -1px -1px 0 $secondary-color, 1px -1px 0 $secondary-color, -1px 1px 0 $secondary-color;
+            @include media-breakpoint-down(xs) {
+                font-size: 1.5em;
+            }
+        }
+    }    
+
+    .links{
+        i{
+            color: $secondary-color;
+            font-size: 72px;
+        }
+    }
+}

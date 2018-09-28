@@ -20,7 +20,6 @@ import { TecleandoComponent } from '../componentes/tecleando/tecleando.component
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
-  { path: 'Jugadores', component: JugadoresListadoComponent },
   {
     path: '',
     component: PrincipalComponent,
@@ -31,6 +30,10 @@ const MiRuteo = [
         {
           path: 'Resultados',
           component: ListadoDeResultadosComponent
+        },
+        {
+          path: 'Jugadores',
+          component: JugadoresListadoComponent
         },
         {
           path: 'QuienSoy',
