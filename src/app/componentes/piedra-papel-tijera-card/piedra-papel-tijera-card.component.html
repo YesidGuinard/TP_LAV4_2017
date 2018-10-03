@@ -1,26 +1,2 @@
-<div class="container-fluid">
-  <div class="row align-items-center justify-content-center principal">
-    <div class="d-none d-md-block col-1 col-sm-1 col-md-1 col-lg-1">
-      <button class="btnCambiar" [routerLink]=" ['../TCard'] "><i class="fa fa-angle-left"></i></button>
-    </div>
-    <div class="d-none d-lg-block col-lg-4">
-      <img ng-if class="img-fluid" src="./assets/imagenes/piedra-papel-tijeras.png" alt="piedra, papel o tijeras.">
-    </div>
-    <div class="col-10 col-sm-10 col-md-7 col-lg-5 texto">
-      <div class="row">
-        <h2>Piedra, Papel o Tijeras</h2>
-      </div>
-      <div class="row">
-        <p><b>Un juego milenario</b>, jugado originalmente por los señores de la guerra del periodo Han en China. </p>
-        <p>La piedra que vence a la tijera rompiéndola, la tijera que vence al papel cortándolo y el papel que vence a
-          la piedra envolviéndola.</p>
-      </div>
-      <div class="row">
-        <button class="btnJugar"><i class="fa fa-play"></i> JUEGA YA!</button>
-      </div>
-    </div>
-    <div class="d-none d-md-block col-1 col-sm-1 col-md-1 col-lg-1 ml-md-5">
-      <button class="btnCambiar" [routerLink]=" ['../AENCard'] "><i class="fa fa-angle-right"></i></button>
-    </div>
-  </div>
-</div>
+<app-card class="ppt" [title]="title" [description]="description" [linkNext]="linkNext" [linkPrevious]="linkPrevious" [imgSource]="imgSource"
+[linkGame]="linkGame" ></app-card>

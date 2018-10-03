@@ -1,25 +1,2 @@
-<div class="container-fluid">
-  <div class="row align-items-center justify-content-center principal">
-    <div class="d-none d-md-block col-1 col-sm-1 col-md-1 col-lg-1">
-      <button class="btnCambiar" [routerLink]=" ['../AENCard'] "><i class="fa fa-angle-left"></i></button>
-    </div>
-    <div class="d-none d-lg-block col-lg-4">
-      <img ng-if class="img-fluid" src="./assets/imagenes/Tecleando.png" alt="Tecleando">
-    </div>
-    <div class="col-10 col-sm-10 col-md-7 col-lg-5 texto">
-      <div class="row">
-        <h2>Tecleando</h2>
-      </div>
-      <div class="row">
-        <p><b>¡Probá tus reflejos!</b></p>
-        <p>Apretá las teclas que aparecen en pantalla cuanto antes y suma puntos para demostrar que sos el más rápido. Pero cuidado, si te equivocas perderás vidas.</p>
-      </div>
-      <div class="row">
-        <button class="btnJugar" routerLink="../Tecleando"><i class="fa fa-play"></i> JUEGA YA!</button>
-      </div>
-    </div>
-    <div class="d-none d-md-block col-1 col-sm-1 col-md-1 col-lg-1 ml-md-5">
-      <button class="btnCambiar" [routerLink]=" ['../PPTCard'] "><i class="fa fa-angle-right"></i></button>
-    </div>
-  </div>
-</div>
+<app-card class="tecla" [title]="title" [description]="description" [linkNext]="linkNext" [linkPrevious]="linkPrevious" [imgSource]="imgSource"
+[linkGame]="linkGame" ></app-card>

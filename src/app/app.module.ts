@@ -37,6 +37,10 @@ import { SpinnerComponent } from './componentes/spinner/spinner.component';
 import { AuthService } from './servicios/auth.service';
 import { DatabaseService } from './servicios/database.service';
 import { environment } from '../environments/environment.prod';
+import { CardComponent } from './componentes/card/card.component';
+import { AgilidadArimeticaCardComponent } from './componentes/agilidad-arimetica-card/agilidad-arimetica-card.component';
+import { AnagramaCardComponent } from './componentes/anagrama-card/anagrama-card.component';
+import { TatetiCardComponent } from './componentes/tateti-card/tateti-card.component';
 
 
 @NgModule({
@@ -60,7 +64,11 @@ import { environment } from '../environments/environment.prod';
     TecleandoCardComponent,
     TecleandoComponent,
     SpinnerComponent,
-    TableroJuegosComponent
+    TableroJuegosComponent,
+    CardComponent,
+    AgilidadArimeticaCardComponent,
+    AnagramaCardComponent,
+    TatetiCardComponent
   ],
   imports: [
     NgbModule,

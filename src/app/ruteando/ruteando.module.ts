@@ -16,6 +16,10 @@ import { PiedraPapelTijeraCardComponent } from '../componentes/piedra-papel-tije
 import { AdivinaElNumeroCardComponent } from '../componentes/adivina-el-numero-card/adivina-el-numero-card.component';
 import { TecleandoCardComponent } from '../componentes/tecleando-card/tecleando-card.component';
 import { TecleandoComponent } from '../componentes/tecleando/tecleando.component';
+import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
+import { TatetiCardComponent } from '../componentes/tateti-card/tateti-card.component';
+import { AgilidadArimeticaCardComponent } from '../componentes/agilidad-arimetica-card/agilidad-arimetica-card.component';
+import { AnagramaCardComponent } from '../componentes/anagrama-card/anagrama-card.component';
 
 
 // declaro donde quiero que se dirija
@@ -47,6 +51,9 @@ const MiRuteo = [
             { path: 'TCard', data: { depth: 1 }, component: TecleandoCardComponent },
             { path: 'PPTCard', data: { depth: 2 }, component: PiedraPapelTijeraCardComponent },
             { path: 'AENCard', data: { depth: 3 }, component: AdivinaElNumeroCardComponent },
+            { path: 'AACard', data: { depth: 4 }, component: AgilidadArimeticaCardComponent },
+            { path: 'ACard', data: { depth: 5 }, component: AnagramaCardComponent },
+            { path: 'TTTCard', data: { depth: 6 }, component: TatetiCardComponent },
             { path: 'Tecleando', component: TecleandoComponent },
             { path: 'Adivina', component: AdivinaElNumeroComponent },
             { path: 'Agilidad', component: AgilidadAritmeticaComponent }]
