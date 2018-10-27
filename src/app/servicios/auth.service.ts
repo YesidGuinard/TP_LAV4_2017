@@ -35,7 +35,7 @@ export class AuthService {
 
   //Obtiene los datos del usuario en caso de que esté logueado. 
   getAuth(){
-    return this.afAuth.authState.map( auth => auth );
+    return this.afAuth.authState.pipe( auth => auth );
   }
 
   updateProfile(newName:string, photoURL: string){    

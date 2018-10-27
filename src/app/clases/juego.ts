@@ -17,8 +17,10 @@ export enum EstadoJuego
 export enum Juegos{
   Tecleando = "Tecleando",
   AdivinaElNumero = "Adivina el Número",
-  AgilidadAritmetica = "Agilidad Aritmética"
-
+  AgilidadAritmetica = "Agilidad Aritmética",
+  PiedraPapelTijera = "Piedra, Papel o Tijera",
+  Anagrama = "Anagrama",
+  TaTeTi = "TaTeTi"
 }
 
 export abstract class Juego {
@@ -43,6 +45,8 @@ export abstract class Juego {
     this.juego = juego;
     this.databaseService = databaseService;
   } 
+
+  public abstract Jugar();
 
   public ComenzarCronometro(){
     let horaInicio = new Date();

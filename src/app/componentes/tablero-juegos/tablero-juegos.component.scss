@@ -63,6 +63,13 @@
     @include AplicarEstilos($primary-color, $secondary-color, $terciary-color);
 }
 
+.aen{
+    $primary-color: #071a52;
+    $secondary-color: #a7ff83;
+    $terciary-color: #17b978;
+    @include AplicarEstilos($primary-color, $secondary-color, $terciary-color);
+}
+
 
 
 

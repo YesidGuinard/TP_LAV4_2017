@@ -14,10 +14,12 @@ import { DatabaseService} from '../../servicios/database.service';
 
 export class TecleandoComponent implements OnInit {
   public juego : Tecleando;
+  public descripcionJugando : string;
 
   constructor(public authService: AuthService,private router: Router, public databaseService : DatabaseService)
   { 
     this.juego = new Tecleando(databaseService);
+    this.descripcionJugando = "<b>JUGANDO </b>- ¡Presiona las teclas que aparecen en pantalla!";
   }
 
   ngOnInit() {
@@ -34,10 +36,6 @@ export class TecleandoComponent implements OnInit {
   @HostListener('document:keypress', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) { 
     this.juego.PresionoTecla(event.key);    
-  }
-
-  public IrAResultados(){
-
   }
  
   

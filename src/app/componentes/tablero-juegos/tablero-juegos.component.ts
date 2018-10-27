@@ -11,6 +11,8 @@ export class TableroJuegosComponent implements OnInit {
 
   @Input() ultimoPuntaje : number;
   @Input() tiempoRestante : number;
+  @Input() descripcionDerecha : string;
+  @Input() descripcionIzquierda : string;
   @Input() vidasRestantes : number;
   @Input() minutosTranscurridos : number;
   @Input() segundosTranscurridos : number;

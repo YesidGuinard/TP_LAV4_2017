@@ -55,8 +55,12 @@ const MiRuteo = [
             { path: 'ACard', data: { depth: 5 }, component: AnagramaCardComponent },
             { path: 'TTTCard', data: { depth: 6 }, component: TatetiCardComponent },
             { path: 'Tecleando', component: TecleandoComponent },
-            { path: 'Adivina', component: AdivinaElNumeroComponent },
-            { path: 'Agilidad', component: AgilidadAritmeticaComponent }]
+            { path: 'AdivinaElNumero', component: AdivinaElNumeroComponent },
+            { path: 'AgilidadAritmetica', component: AgilidadAritmeticaComponent },
+            { path: 'PiedraPapelTijera', component: AdivinaElNumeroComponent },
+            { path: 'Anagrama', component: AnagramaComponent },
+            { path: 'TaTeTi', component: AgilidadAritmeticaComponent }          
+          ]
         },
       ]
   },

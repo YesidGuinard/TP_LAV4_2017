@@ -1,0 +1,95 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+$primary-color: #071a52;
+$secondary-color: #a7ff83;
+$terciary-color: #17b978;
+$font-family: "GameTime";
+
+.container-fluid{
+    background: $primary-color url("../../../assets/patterns/gplay.png");
+    background-repeat: repeat;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin: 0px;
+    height: 100vh;
+    padding-top: 7em;
+
+    h2{
+        font-family: $font-family;
+        font-size:3em;
+        text-align: center;
+        color: $terciary-color;
+        margin-bottom: 0.5em;
+        text-shadow: 2px 0 0 $secondary-color, -2px 0 0 $secondary-color, 0 2px 0 $secondary-color, 0 -2px 0 $secondary-color, 1px 1px $secondary-color, -1px -1px 0 $secondary-color, 1px -1px 0 $secondary-color, -1px 1px 0 $secondary-color;
+        @include media-breakpoint-down(xs) {
+            font-size: 1.5em;
+        }
+    }
+
+
+    .principal{  
+        margin: 0px;
+
+        .divJuego{
+            border: 2px solid $terciary-color;
+            text-align: center;
+            margin-bottom:15px;
+
+            img{
+                max-width: 50%;
+                max-height: 50%;
+            }
+
+            input{
+                border: 2px solid $terciary-color;
+                width: 100%;
+            }
+
+            label{
+                font-family: Arial, Helvetica, sans-serif;
+                color: $secondary-color;
+                font-weight: bold;
+                font-size: 26px;
+            }
+
+            .btnVerificar {
+                color: $secondary-color;
+                background: none;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                border-radius: 0;
+                padding: 0.5em 2em;
+                letter-spacing: 0.35em;
+                margin: 1em;
+                font-size: 1em;
+                transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+                border: $terciary-color solid 2px;
+                    
+                &:hover {
+                    border: $secondary-color solid 2px;
+                    background-color: $terciary-color;
+                    cursor: pointer;
+                }
+            
+                &:focus{
+                    outline: none;
+                }
+            }            
+        }
+
+        .gano{
+            background-color: rgba(0, 255, 13, 0.3);
+        }
+
+        .perdio{
+            background-color: rgba(255, 0, 0, 0.3);
+        }
+
+        .texto{
+            margin-left: 1.5em;           
+        }    
+    }   
+}
+

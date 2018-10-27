@@ -11,7 +11,8 @@
     <div class="col-10 col-sm-10 col-md-6 col-lg-6 texto">
       <app-tablero-juegos class="tecleando" ultimoPuntaje={{juego.ultimoPuntaje}} tiempoRestante={{juego.tiempoRestante}} 
       vidasRestantes={{juego.vidasRestantes}} minutosTranscurridos={{juego.minutosTranscurridos}} segundosTranscurridos={{juego.segundosTranscurridos}}
-      jugador={{juego.jugador}}  modoDeJuego={{juego.modoDeJuego}} (jugarClicked)="juego.Jugar()" (resultadosClicked)="IrAResultados()"></app-tablero-juegos>
+      jugador={{juego.jugador}}  modoDeJuego={{juego.modoDeJuego}} (jugarClicked)="juego.Jugar()"
+      [descripcionDerecha] = "descripcionJugando" descripcionIzquierda="¡Próxima tecla en <b> {{juego.tiempoRestante}} </b>segundos!"></app-tablero-juegos>
     </div>
   </div>
 </div>

@@ -1,22 +1,23 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!--app-menu></app-menu-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div style="text-align:center">
-  <h1>
-  </h1>
- </div>
-<h2></h2>
-<form name="juego">
-
-   <label>ingrese numero:  </label>  <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
-    <h1>{{nuevoJuego.numeroIngresado}}  </h1>
- 
-    <h2 [hidden]="ocultarVerificar"><button  *ngIf="nuevoJuego.numeroSecreto!=0" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button></h2>
- 
-    <h2><button *ngIf="nuevoJuego.numeroSecreto==0 " (click)="generarnumero()"  class="btn btn-info btn-lg">Nuevo número secreto</button></h2>
- 
-    <h2><p *ngIf="nuevoJuego.numeroSecreto!=0" ><i class="fa fa-spinner fa-spin"></i>Esperando que ingrese un número</p></h2>
-
-
-</form>
-<div id="snackbar">{{Mensajes}}</div>
+<div class="container-fluid">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-12">
+      <h2>Adivina el Numero</h2>
+    </div>
+  </div>
+  <div class="row align-items-center justify-content-center principal">
+    <div [ngClass]="{'perdio': juego.estadoJuego == 2, 'gano' : juego.estadoJuego == 1}" class="col-10 col-sm-10 col-md-3 col-lg-5 divJuego">
+      <img *ngIf="juego.modoDeJuego == 2" class="img-fluid" src="../../../assets/imagenes/AdivinaElNumero.png" alt="Imagen Juego">
+      <label *ngIf="juego.modoDeJuego == 1" for="numeroIngresado">Ingrese un número entre 1 y 100: </label>
+      <input *ngIf="juego.modoDeJuego == 1" [(ngModel)]="juego.numeroIngresado" id="numeroIngresado" name="numeroIngresado"
+        type="number" class="form-control" />
+      <button *ngIf="juego.modoDeJuego == 1" (click)="verificar()" class="btnVerificar">Verificar</button>
+    </div>
+    <div class="col-10 col-sm-10 col-md-6 col-lg-6 texto">
+      <app-tablero-juegos class="aen" ultimoPuntaje={{juego.ultimoPuntaje}} tiempoRestante={{juego.tiempoRestante}}
+        vidasRestantes={{juego.vidasRestantes}} minutosTranscurridos={{juego.minutosTranscurridos}}
+        segundosTranscurridos={{juego.segundosTranscurridos}} jugador={{juego.jugador}} modoDeJuego={{juego.modoDeJuego}}
+        (jugarClicked)="juego.Jugar()" descripcionDerecha="<b>JUGANDO</b> - Ingresa números y verificalos hasta encontrar el correcto."
+        descripcionIzquierda="juego.pista"></app-tablero-juegos>
+    </div>
+  </div>
+</div>

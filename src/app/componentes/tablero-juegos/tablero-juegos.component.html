@@ -39,10 +39,10 @@
 <div class="row botones">
   <div class="col-5">
       <button *ngIf="modoDeJuego == 2" class="btnJugar" (click)="JugarClicked()"><i class="fa fa-play"></i> JUGAR</button>
-      <span *ngIf="modoDeJuego == 1">¡Próxima tecla en <b>{{tiempoRestante}}</b> segundos!</span>
+      <span *ngIf="modoDeJuego == 1" [innerHTML]="descripcionIzquierda"></span>
   </div>
   <div class="col-7">
-      <button *ngIf="modoDeJuego == 2" class="btnJugar" (click)="ResultadosClicked()"><i class="fa fa-trophy"></i> RESULTADOS</button>
-      <span *ngIf="modoDeJuego == 1"> <b>JUGANDO </b>- ¡Presiona las teclas que aparecen en pantalla!</span>            
+      <button *ngIf="modoDeJuego == 2" class="btnJugar" routerLink="../../Resultados"><i class="fa fa-trophy"></i> RESULTADOS</button>
+      <span *ngIf="modoDeJuego == 1" [innerHTML]="descripcionDerecha"> </span>            
   </div>
 </div>

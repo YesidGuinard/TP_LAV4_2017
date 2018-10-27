@@ -28,7 +28,6 @@ $font-family: "GameTime";
         }
     }
 
-
     .principal{  
         margin: 0px;
 
@@ -43,9 +42,7 @@ $font-family: "GameTime";
                 color: $terciary-color;
                 margin-bottom: 0.5em;
                 text-shadow: 2px 0 0 $secondary-color, -2px 0 0 $secondary-color, 0 2px 0 $secondary-color, 0 -2px 0 $secondary-color, 1px 1px $secondary-color, -1px -1px 0 $secondary-color, 1px -1px 0 $secondary-color, -1px 1px 0 $secondary-color;
-            }
-
-            
+            }           
         }
 
         .gano{
@@ -56,117 +53,8 @@ $font-family: "GameTime";
             background-color: rgba(255, 0, 0, 0.3);
         }
         
-
-        img{
-            margin-top: auto;
-            margin-bottom: auto;
-        }
-
         .texto{
-            margin-left: 1.5em; 
-
-            
-            
+            margin-left: 1.5em;     
         }
-
-        table, th, td{
-        border: 2px solid $terciary-color !important;
-        color: $secondary-color;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-        background-color: $primary-color url("../../../assets/patterns/gplay.png");
-    }
-    
-    span{
-        font-size: 1em;
-        color: $secondary-color;
-        font-family: Arial, Helvetica, sans-serif;
-    
-        b{
-            color: $terciary-color;
-        }
-    
-        @include media-breakpoint-down(xs) {
-            font-size: 1em;
-        }
-    }       
-    
-    .botones{
-        text-align: center;
-    }
-    
-    .btnJugar {
-        color: $secondary-color;
-        background: none;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        border-radius: 0;
-        padding: 1.2em 2em;
-        letter-spacing: 0.35em;
-        font-size: 1em;
-        transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
-        margin-top:1em;
-        border: $terciary-color solid 2px;
-            
-        &:hover {
-            border: $secondary-color solid 2px;
-            background-color: $terciary-color;
-            cursor: pointer;
-        }
-    
-        &:focus{
-            outline: none;
-        }
-    }
     }
 }
-
-table, th, td{
-        border: 2px solid $terciary-color !important;
-        color: $secondary-color;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-        background-color: $primary-color url("../../../assets/patterns/gplay.png");
-    }
-    
-    span{
-        font-size: 1em;
-        color: $secondary-color;
-        font-family: Arial, Helvetica, sans-serif;
-    
-        b{
-            color: $terciary-color;
-        }
-    
-        @include media-breakpoint-down(xs) {
-            font-size: 1em;
-        }
-    }       
-    
-    .botones{
-        text-align: center;
-    }
-    
-    .btnJugar {
-        color: $secondary-color;
-        background: none;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        border-radius: 0;
-        padding: 1.2em 2em;
-        letter-spacing: 0.35em;
-        font-size: 1em;
-        transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
-        margin-top:1em;
-        border: $terciary-color solid 2px;
-            
-        &:hover {
-            border: $secondary-color solid 2px;
-            background-color: $terciary-color;
-            cursor: pointer;
-        }
-    
-        &:focus{
-            outline: none;
-        }
-    }

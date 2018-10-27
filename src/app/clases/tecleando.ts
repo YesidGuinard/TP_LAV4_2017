@@ -2,13 +2,13 @@ import { Juego, ModoDeJuego, EstadoJuego, Juegos } from './juego';
 import { DatabaseService } from "../servicios/database.service";
 
 export class Tecleando extends Juego {
-    public tiempoRestante : number;
-    public tecla : string;
-    private intervalo : NodeJS.Timer;
-    private readonly tiempoCambio :number = 2;
+    public tiempoRestante: number;
+    public tecla: string;
+    private intervalo: NodeJS.Timer;
+    private readonly tiempoCambio: number = 2;
 
-    constructor(databaseService : DatabaseService) {
-        super(3,Juegos.Tecleando,databaseService);
+    constructor(databaseService: DatabaseService) {
+        super(3, Juegos.Tecleando, databaseService);
         this.tiempoRestante = 0;
         this.tecla = "?";
     }
@@ -24,15 +24,16 @@ export class Tecleando extends Juego {
                 this.vidasRestantes--;
                 this.estadoJuego = EstadoJuego.Perdio;
             }
-        }
 
-        this.tiempoRestante = this.tiempoCambio;
-        this.CambiarTecla();
+
+            this.tiempoRestante = this.tiempoCambio;
+            this.CambiarTecla();
+        }
         this.VerificarEstadoDelJuego();
     }
 
     private VerificarEstadoDelJuego() {
-        if (this.modoDeJuego == ModoDeJuego.Jugando && this.vidasRestantes <= 0) {            
+        if (this.modoDeJuego == ModoDeJuego.Jugando && this.vidasRestantes <= 0) {
             this.modoDeJuego = ModoDeJuego.NoJugando;
             this.FinalizarCronometro();
             clearInterval(this.intervalo);

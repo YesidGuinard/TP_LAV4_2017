@@ -6,9 +6,6 @@ import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivin
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { HttpModule } from '@angular/http';
-import { MiHttpService } from './servicios/mi-http/mi-http.service'; 
-import { JugadoresService } from './servicios/jugadores.service'; 
-import { ArchivosJugadoresService} from './servicios/archivos-jugadores.service'; 
 import { ErrorComponent } from './componentes/error/error.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/agilidad-aritmetica.component';
@@ -52,7 +49,7 @@ import { TatetiCardComponent } from './componentes/tateti-card/tateti-card.compo
     PrincipalComponent,
     LoginComponent,
     AgilidadAritmeticaComponent,
-    JuegosComponent,
+    JuegosComponent, 
     CabeceraComponent,
     QuienSoyComponent,
     AnagramaComponent,
@@ -86,9 +83,6 @@ import { TatetiCardComponent } from './componentes/tateti-card/tateti-card.compo
   ],
   providers: [ 
     AuthService,
-    MiHttpService,
-    ArchivosJugadoresService,
-    JugadoresService,
     DatabaseService
   ],
   bootstrap: [AppComponent]
